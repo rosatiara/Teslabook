@@ -52,6 +52,8 @@ struct ContentView: View {
                         }
                     }
                 }
+                Post()
+                    .padding()
             }
 
     }
@@ -59,6 +61,51 @@ struct ContentView: View {
 
 }
 
+    
+    
+    
+struct Post: View {
+        var body: some View {
+            VStack {
+                
+                // user
+                HStack {
+                    Image("elon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 50, height: 50, alignment: .center)
+                        .cornerRadius(25)
+                    VStack {
+                        HStack {
+                            Text("Elon Musk")
+                                .foregroundColor(Color.black)
+                                .font(.system(size: 18, weight: .bold))
+                            Spacer()
+                        }
+                        HStack {
+                            Text("CEO at Tesla")
+                            foregroundColor(Color.red)
+                                .font(.system(size:15, weight: .light))
+                            Spacer()
+
+                        }
+                    }
+                    Spacer()
+                }
+                // post
+                HStack {
+                    
+                }
+                
+                // buttons
+                HStack {
+                    
+                }
+            }
+
+        }
+    }
+    
 // automatic preview
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
