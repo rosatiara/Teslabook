@@ -7,7 +7,8 @@
 
 import SwiftUI
 import CoreData
-
+// TODO :
+// make model.
 struct ContentView: View {
     @Binding var text: String
     let cars = ["car1", "car2", "car3", "car4", "car5"]
