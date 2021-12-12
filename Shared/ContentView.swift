@@ -19,7 +19,7 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width:120, height:60)
                 Spacer()
-                Image("tesla-red")
+                Image("tesla-logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width:50, height:30)
@@ -46,14 +46,16 @@ struct ContentView: View {
                                         .frame(width:140, height:200, alignment: .center)
                                         .clipped()
                                         .aspectRatio(contentMode: .fill)
+                                        .hoverEffect(.lift)
                                 }
 
                             }.padding()
                         }
+                        Post()
+                             .padding(.horizontal,20)
                     }
                 }
-                Post()
-                    .padding()
+
             }
 
     }
@@ -65,9 +67,9 @@ struct ContentView: View {
     
     
 struct Post: View {
+    
         var body: some View {
             VStack {
-                
                 // user
                 HStack {
                     Image("elon")
@@ -79,28 +81,46 @@ struct Post: View {
                         HStack {
                             Text("Elon Musk")
                                 .foregroundColor(Color.black)
-                                .font(.system(size: 18, weight: .bold))
+                                .font(.system(size: 18, weight: .bold, design: .default))
                             Spacer()
                         }
                         HStack {
-                            Text("CEO at Tesla")
-                            foregroundColor(Color.red)
+                            Text("CEO at Tesla · 15 minutes ago")
+                                .foregroundColor(Color.gray)
                                 .font(.system(size:15, weight: .light))
                             Spacer()
-
                         }
                     }
                     Spacer()
                 }
                 // post
                 HStack {
-                    
+                    Text("Model S Plaid is sickkkk!!!!")
+                        .padding(.vertical,5)
+                        .font(.system(size:18,weight: .regular, design:. default))
+                        .multilineTextAlignment(.leading)
+                    Spacer()
                 }
-                
+                Spacer()
                 // buttons
                 HStack {
-                    
-                }
+                    Button(action:{
+                        
+                    }, label:{
+                        Text("Like")
+                    })
+                    Button(action:{
+                        
+                    }, label:{
+                        Text("Comment")
+                    })
+                    Spacer()
+                    Button(action:{
+                        
+                    }, label:{
+                        Text("Share")
+                    })
+                }.font(.system(size:14,weight: .regular, design: .default))
             }
 
         }
