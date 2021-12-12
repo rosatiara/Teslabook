@@ -51,8 +51,17 @@ struct ContentView: View {
 
                             }.padding()
                         }
-                        Post()
+                        Post(userImage: "elon", name: "Elon Musk", post: "Model S Plaid is sickkkk!!!!", details: "CEO at Tesla")
                              .padding(.horizontal,20)
+
+                        Post(userImage: "andrej", name: "Andrej Karpathy", post: "Various computational workloads exhibit different amounts of parallelism and are accordingly best scheduled on CPU or GPU. Same is true for human organizations/projects/tasks, but it seems rarely analyzed from that perspective. Compiling a project to run fast on people is hard :)", details: "Director of AI at Tesla")
+                             .padding(.horizontal,20)
+                             .padding(.vertical,40)
+                        Post(userImage: "elon", name: "Elon Musk", post: "Wow, only three weeks to 2022! What will 2032 will be like? Seems so futuristic! Will we be on Mars?", details: "Director of AI at Tesla")
+                             .padding(.horizontal,20)
+                             .padding(.vertical,40)
+
+                        
                     }
                 }
 
@@ -67,25 +76,29 @@ struct ContentView: View {
     
     
 struct Post: View {
+    let userImage: String
+    let name: String
+    let post: String
+    let details: String
     
         var body: some View {
             VStack {
                 // user
                 HStack {
-                    Image("elon")
+                    Image(userImage)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 50, height: 50, alignment: .center)
                         .cornerRadius(25)
                     VStack {
                         HStack {
-                            Text("Elon Musk")
+                            Text(name)
                                 .foregroundColor(Color.black)
                                 .font(.system(size: 18, weight: .bold, design: .default))
                             Spacer()
                         }
                         HStack {
-                            Text("CEO at Tesla · 15 minutes ago")
+                            Text(details)
                                 .foregroundColor(Color.gray)
                                 .font(.system(size:15, weight: .light))
                             Spacer()
@@ -95,9 +108,9 @@ struct Post: View {
                 }
                 // post
                 HStack {
-                    Text("Model S Plaid is sickkkk!!!!")
-                        .padding(.vertical,5)
-                        .font(.system(size:18,weight: .regular, design:. default))
+                    Text(post)
+                        .padding(.vertical,12)
+                        .font(.system(size:16,weight: .regular, design:. default))
                         .multilineTextAlignment(.leading)
                     Spacer()
                 }
@@ -122,9 +135,9 @@ struct Post: View {
                     })
                 }.font(.system(size:14,weight: .regular, design: .default))
             }
-
         }
     }
+   
     
 // automatic preview
     struct ContentView_Previews: PreviewProvider {
