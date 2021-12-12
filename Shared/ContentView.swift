@@ -27,7 +27,7 @@ struct ContentView: View {
                 TextField("Search...", text: $text)
                     .padding(.horizontal, 10)
                     .padding(7)
-                    .background(Color(.systemGray5))
+                    .background(Color(.systemGray6))
                     .frame(width: 360, height: 40)
                     .cornerRadius(10)
             Spacer()
