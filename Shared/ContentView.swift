@@ -10,10 +10,20 @@ import CoreData
 
 struct ContentView: View {
 
-
     var body: some View {
         VStack {
-            Text("test")
+            HStack {
+                Image("tesla-name-logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width:120, height:60)
+                Spacer()
+                Image("tesla-red")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width:50, height:30)
+            }.padding(20)
+            Spacer()
         }
     }
 
@@ -25,9 +35,9 @@ struct ContentView: View {
         static var previews: some View {
             Group {
                 ContentView()
-                    .preferredColorScheme(.dark)
-                ContentView()
                     .preferredColorScheme(.light)
+                ContentView()
+                    .preferredColorScheme(.dark)
             }
         }
     }
