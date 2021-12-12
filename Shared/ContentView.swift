@@ -10,6 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @Binding var text: String
+    let cars = ["car1", "car2", "car3", "car4", "car5"]
     var body: some View {
         VStack {
             HStack {
@@ -31,6 +32,27 @@ struct ContentView: View {
                     .frame(width: 360, height: 40)
                     .cornerRadius(10)
             Spacer()
+            
+            // feed section
+            ZStack {
+                ScrollView(.vertical) {
+                    VStack {
+                        ScrollView(.horizontal, showsIndicators: false){
+                            HStack {
+                                ForEach(cars, id: \.self){
+                                    car in
+                                    Image(car)
+                                        .resizable()
+                                        .frame(width:140, height:200, alignment: .center)
+                                        .clipped()
+                                        .aspectRatio(contentMode: .fill)
+                                }
+
+                            }.padding()
+                        }
+                    }
+                }
+            }
 
     }
 
