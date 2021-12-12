@@ -20,8 +20,14 @@ struct ContentView: View {
 
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+// automatic preview
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            Group {
+                ContentView()
+                    .preferredColorScheme(.dark)
+                ContentView()
+                    .preferredColorScheme(.light)
+            }
+        }
     }
-}
