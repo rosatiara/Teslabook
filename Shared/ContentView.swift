@@ -62,18 +62,12 @@ struct ContentView: View {
                             .padding(.vertical,30)
                     }
                 }
-
             }
-
     }
-
-
 }
 
-    
-    
-    
 struct Post: View {
+    @State var isLiked: Bool = false
     let userImage: String
     let name: String
     let post: String
@@ -116,9 +110,9 @@ struct Post: View {
                 // buttons
                 HStack {
                     Button(action:{
-                        
+                        isLiked.toggle()
                     }, label:{
-                        Text("Like")
+                        Text(isLiked ? "Liked" : "Like")
                     })
                     Button(action:{
                         
