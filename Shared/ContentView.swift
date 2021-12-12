@@ -19,7 +19,7 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width:120, height:60)
                 Spacer()
-                Image("tesla-logo")
+                Image("tesla-red")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width:50, height:30)
@@ -56,12 +56,10 @@ struct ContentView: View {
 
                         Post(userImage: "andrej", name: "Andrej Karpathy", post: "Various computational workloads exhibit different amounts of parallelism and are accordingly best scheduled on CPU or GPU. Same is true for human organizations/projects/tasks, but it seems rarely analyzed from that perspective. Compiling a project to run fast on people is hard :)", details: "Director of AI at Tesla")
                              .padding(.horizontal,20)
-                             .padding(.vertical,40)
+                             .padding(.vertical,30)
                         Post(userImage: "elon", name: "Elon Musk", post: "Wow, only three weeks to 2022! What will 2032 will be like? Seems so futuristic! Will we be on Mars?", details: "Director of AI at Tesla")
-                             .padding(.horizontal,20)
-                             .padding(.vertical,40)
-
-                        
+                            .padding(.horizontal,20)
+                            .padding(.vertical,30)
                     }
                 }
 
@@ -134,7 +132,8 @@ struct Post: View {
                         Text("Share")
                     })
                 }.font(.system(size:14,weight: .regular, design: .default))
-            }
+            }.background(Color(.systemBackground))
+                .cornerRadius(7)
         }
     }
    
@@ -143,7 +142,6 @@ struct Post: View {
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
                 ContentView(text: .constant(""))
-                    .preferredColorScheme(.light)
         }
     }
 }
