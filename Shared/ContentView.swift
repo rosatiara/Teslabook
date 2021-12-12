@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-
+    @Binding var text: String
     var body: some View {
         VStack {
             HStack {
@@ -22,9 +22,16 @@ struct ContentView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width:50, height:30)
-            }.padding(20)
+            }.padding(.horizontal, 17)
+            // search bar
+                TextField("Search...", text: $text)
+                    .padding(.horizontal, 10)
+                    .padding(7)
+                    .background(Color(.systemGray5))
+                    .frame(width: 360, height: 40)
+                    .cornerRadius(10)
             Spacer()
-        }
+
     }
 
 
@@ -33,11 +40,8 @@ struct ContentView: View {
 // automatic preview
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            Group {
-                ContentView()
+                ContentView(text: .constant(""))
                     .preferredColorScheme(.light)
-                ContentView()
-                    .preferredColorScheme(.dark)
-            }
         }
     }
+}
