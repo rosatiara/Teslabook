@@ -54,7 +54,6 @@ struct ContentView: View {
                         }
                         Post(userImage: "elon", name: "Elon Musk", post: "Model S Plaid is sickkkk!!!!", details: "CEO at Tesla")
                              .padding(.horizontal,20)
-
                         Post(userImage: "andrej", name: "Andrej Karpathy", post: "Various computational workloads exhibit different amounts of parallelism and are accordingly best scheduled on CPU or GPU. Same is true for human organizations/projects/tasks, but it seems rarely analyzed from that perspective. Compiling a project to run fast on people is hard :)", details: "Director of AI at Tesla")
                              .padding(.horizontal,20)
                              .padding(.vertical,30)
